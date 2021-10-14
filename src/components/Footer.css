@@ -1,0 +1,47 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  width: 100vw;
+  background-color: black;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 30px;
+}
+
+.footerLeft > p {
+  color: gray;
+  font-size: small;
+}
+
+.footerRight {
+  width: 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin-top: 5px;
+  margin-right: 40px;
+  color: gray;
+}
+
+.footerRight .whatsapp:hover{
+  color: brown;
+  cursor: pointer;
+}
+
+.footerRight .insta:hover {
+  color: brown;
+  cursor: pointer;
+
+}
+
+.footerRight .mail:hover {
+  color: brown;
+  cursor: pointer;
+}

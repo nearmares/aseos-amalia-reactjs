@@ -1,0 +1,39 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc( 100vh - 130px);
+}
+
+.main__container {
+  height:70vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid black;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white
+}
+
+.main__containerName{
+  margin-bottom: 20px;
+}
+
+.main__containerName > h1 {
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.main__containerName > h1 > span {
+  font-family: 'Ephesis', cursive;
+  font-size: 100px;
+}
+
+.main__containerSlogan > p {
+  font-size: 20px;
+  font-weight: 100;
+}

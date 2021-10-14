@@ -1,39 +1,42 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.appbody {
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
+.videoBackground {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100vh;
+  height: auto;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .videoBackground {
+    width: 100%;
+    height: auto;
   }
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+@media (max-aspect-ratio: 16/9) {
+  .videoBackground {
+    width: auto;
+    height: 100%;
+  }
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
+@media( max-width: 767px) {
+  .videoBackground {
+    display: none;
   }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
+  .appbody {
+    background: url('./assets/thumbnail-big.jpg');
+    background-size: cover;
   }
 }

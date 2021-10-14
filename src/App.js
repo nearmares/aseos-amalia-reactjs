@@ -1,56 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { 
+  Route, 
+  Switch,
+  useLocation
+} from 'react-router-dom'
+import Main from './components/Main'
+import Contact from './components/Contact'
+import Services from './components/Services'
+import Header from './components/Header';
+import Footer from './components/Footer'
+import { AnimatePresence } from 'framer-motion'
+import './App.css'
+import sample from './assets/cleaning-video.mp4' 
 
 function App() {
+
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div className='appbody'>
+      <Header />
+
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.key}>
+          <Route path='/' component={Main} exact/>
+          <Route path='/services' component={Services} exact/>
+          <Route path='/contact' component={Contact} exact/>
+        </Switch>
+      </AnimatePresence>
+
+      <Footer />
+
+      <video 
+        className='videoBackground' 
+        poster='./assets/thumbnail-big.jpg'
+        autoPlay 
+        loop 
+        muted>
+        <source src={sample} type='video/mp4' />
+      </video>
     </div>
   );
 }
