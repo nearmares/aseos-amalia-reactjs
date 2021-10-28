@@ -8,6 +8,7 @@
 
 .services__container {
   display: flex;
+  justify-content: space-between;
   border: 4px solid black;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -48,5 +49,29 @@
 }
 
 .services__containerRight {
-  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  height: 70%;
+  border: 3px solid black;
+  border-radius: 20px;
+  margin-right: 8%;
+  margin-top: 6%;
+}
+
+.services__descriptionTitle {
+  height: 50px;
+  width: 80%;
+  margin: 30px 20px 25px 25px;
+}
+
+.services__descriptionOptions {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 80%;
+}
+
+.services__descriptionOptions > ul > li {
+  margin: 0 20px 20px 0;
 }

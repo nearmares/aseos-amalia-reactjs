@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Services.css'
 import { motion } from 'framer-motion'
+
+import { aseoGeneral, deepCleaning, Organizacion } from './servicesOptions' 
 
 const servicesVariants = {
   hidden: {
@@ -23,6 +25,11 @@ const servicesVariants = {
 }
 
 function Services() {
+
+  const [ description, setdescription ] = useState(true)
+
+  const [ showCard, setShowCard ] = useState(true) 
+
   return (
     <motion.div 
       variants={servicesVariants}
@@ -45,9 +52,26 @@ function Services() {
           </ul>
         </div>
 
-        <div className="services__containerRight">
+        
+          { showCard ? (
+            <div className="services__containerRight">
 
-        </div>
+              <div className="services__descriptionTitle">
+                {deepCleaning?.title}
+              </div>
+
+              <div className="services__descriptionOptions">
+                <ul>
+                  
+                  {deepCleaning?.options.map( option => (
+                    <li>{option}</li>
+                  ))}
+
+                </ul>
+              </div>
+            </div>
+          ) : null}
+      
 
       </div>
 

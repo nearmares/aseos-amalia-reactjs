@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const mainVariants = {
   hidden: {
     opacity: 0,
-    y: '100vh'
+    y: 0
   },
   visible: {
     opacity: 1,
@@ -13,7 +13,7 @@ const mainVariants = {
     transition: { delay: 0.1, duration: 1}
   },
   exit: {
-    y: '100vh',
+    y: 0,
     transition: {ease: 'easeInOut'}
   }
 }
